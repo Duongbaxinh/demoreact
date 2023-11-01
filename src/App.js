@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import MyButton from './components/Mybutton'
 function App() {
+  const user = {
+    name: 'Hedy Lamarr',
+    imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+    imageSize: 90,
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Wellcome to my app</h3>
+      <img
+        className="avatar"
+        src={`${user.imageUrl}`}
+        alt={'Photo of ' + user.name}
+        style={{
+          width: `${user.imageSize}px`,
+          height: `${user.imageSize}px`
+        }}
+      />
+      <MyButton />
     </div>
   );
 }
